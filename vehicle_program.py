@@ -11,7 +11,7 @@
 from vehicle import *
 
 #create a vehicle
-car1 = Vehicle('blue')
+car1 = Vehicle('blue', '', 2)
 car2 = Vehicle('red', 'ABCD908')
 
 print('\nCar 1:')

@@ -17,15 +17,17 @@ class Vehicle:
         #private fields
         
         self.__license_plate_number = 'AAAA000'
-        self.__colour = colour
+        self.__colour = 'white'
         self.__number_of_doors = 4
         self.__speed = 20.0
         self.__gear = 1
         self.__number_of_wheels = 4
         self.__number_of_tires = 4
         
-        self.__set_number_of_wheels(number_of_wheels)
+        self.set_colour(colour)
         self.set_license_plate_number(license_plate_number)
+        self.__set_number_of_wheels(number_of_wheels)
+        print('\n')
     
     # properties
     
@@ -38,7 +40,7 @@ class Vehicle:
         if not len(new_license_plate_number) == 7:
             # license plate should not be set
             self.__randomize_license_plate_number()
-            print('New license will be randomized.')
+            print('License plate number must be 7 characters long. New license will be randomized.')
         else:
             self.__license_plate_number = new_license_plate_number
         print('License plate number: ' + str(self.__license_plate_number))
@@ -94,15 +96,15 @@ class Vehicle:
     
     def __set_number_of_wheels(self, new_number_of_wheels):
         #private set the number of wheels
-        if new_number_of_wheels == 4:
-            self.__number_of_wheels = new_number_of_wheels
-            self.__number_of_tires = new_number_of_wheels
-            print('This is a 4 wheeled vehicle')
-        elif new_number_of_wheels == 2:
-            self.__number_of_wheels = new_number_of_wheels
-            self.__number_of_tires = new_number_of_wheels
+        if new_number_of_wheels == 2:
+            self.__number_of_wheels = 2
+            self.__number_of_tires = 2
             self.__number_of_doors = 0
             print('This is a 2 wheeled vehicle')
+        else:
+            self.__number_of_wheels = 4
+            self.__number_of_tires = 4
+            print('This is a 4 wheeled vehicle')
     
     def __randomize_license_plate_number(self):
         #Randomizes the license plate if nothing is inputted
